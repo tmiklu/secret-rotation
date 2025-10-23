@@ -44,6 +44,9 @@
 
 name: 'Terraform'
 
+env:
+  ROLE_NAME: "terraform-kms-role"
+  AWS_ROLE_ARN: "arn:aws:iam::1234567890:role/${{ env.ROLE_NAME }}"
 on:
   push:
     branches: [ "master" ]
@@ -64,7 +67,7 @@ jobs:
         shell: bash
 
     steps:
-    - run: env
+    - run: env && echo "/${{ env.ROLE_NAME }}"
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
