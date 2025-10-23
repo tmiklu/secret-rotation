@@ -1,3 +1,3 @@
-output name {
-  value       = "output from root module"
+output "name" {
+  value = "output from root module"
 }
