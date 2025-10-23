@@ -46,7 +46,7 @@ name: 'Terraform'
 
 env:
   ROLE_NAME: "terraform-kms-role"
-  AWS_ROLE_ARN: "arn:aws:iam::1234567890:role/${{ ROLE_NAME }}"
+  AWS_ROLE_ARN: "arn:aws:iam::1234567890:role/$ROLE_NAME"
 on:
   push:
     branches: [ "master" ]
