@@ -67,7 +67,7 @@ jobs:
         shell: bash
 
     steps:
-    - run: env && echo "$AWS_ROLE_ARN"
+    - run: env && echo "arn:aws:iam::1234567890:role/$ROLE_NAME"
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
