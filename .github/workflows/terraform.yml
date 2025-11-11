@@ -30,7 +30,6 @@ jobs:
       run: |
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
-        ls -lha
         cd grafana
         helm template my-grafana --dry-run --debug ./ -f ../dashboards.yaml
         # our case:
