@@ -14,6 +14,6 @@ dashboardProviders:
 dashboards:
   default:
     simple:
-      url: https://raw.githubusercontent.com/tmiklu/secret-rotation/refs/heads/master/dashboards/dummy.json
+      url: https://raw.githubusercontent.com/tmiklu/secret-rotation/refs/heads/master/dashboards/simple.json
     dummy:
       url: https://raw.githubusercontent.com/tmiklu/secret-rotation/refs/heads/master/dashboards/dummy.json
