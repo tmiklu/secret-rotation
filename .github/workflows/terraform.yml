@@ -38,6 +38,7 @@ jobs:
 
     - name: path dashboards
       run: |
+        rm -rf grafana
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
         ls -lha
