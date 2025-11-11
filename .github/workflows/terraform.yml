@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   helm:
-    name: 'Helm dashboards'
+    name: 'Helm dashboards with https url'
     runs-on: ubuntu-latest
     environment: production
 
@@ -26,11 +26,23 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: helm install with 
+    - name: https dashboards
       run: |
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
         ls -lha
         cd grafana
+        helm template my-grafana --dry-run --debug ./ -f ../dashboards.yaml
+        # our case:
+        # helm upgrade my-grafana grafana/grafana --version 10.1.4 -f dashboards.yaml
+
+    - name: path dashboards
+      run: |
+        helm repo add grafana https://grafana.github.io/helm-charts
+        helm pull grafana/grafana --version 10.1.4 --untar
+        ls -lha
+        cp dashboards/* grafana/dashboards
+        cd grafana
+        ls -lha
         helm template my-grafana --dry-run --debug ./ -f ../dashboards.yaml
 
