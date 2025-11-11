@@ -44,6 +44,6 @@ jobs:
         ls -lha
         cp dashboards/* grafana/dashboards
         cd grafana
-        ls -lha ; ls -lha grafana/dashboards
+        ls -lha ; ls -lha dashboards
         helm template my-grafana --dry-run --debug ./ -f ../dashboards.yaml
 
