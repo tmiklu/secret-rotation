@@ -1,0 +1,13 @@
+{
+  "title": "Simple Dashboard Tomas",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "CPU Usage",
+      "datasource": "Prometheus",
+      "targets": [
+        { "expr": "100 - (avg by(instance)(irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)" }
+      ]
+    }
+  ]
+}
