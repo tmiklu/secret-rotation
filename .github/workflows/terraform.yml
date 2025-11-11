@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   helm:
-    name: 'Terraform'
+    name: 'Helm dashboards'
     runs-on: ubuntu-latest
     environment: production
 
