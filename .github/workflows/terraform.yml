@@ -35,5 +35,6 @@ jobs:
       run: |
         ls -lha
         helm repo add grafana https://grafana.github.io/helm-charts
-        helm install my-grafana grafana/grafana --version 10.1.4
+        helm pull grafana/grafana --version 10.1.4
+        ls -lha
 
