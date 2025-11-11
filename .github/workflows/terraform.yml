@@ -1,8 +1,8 @@
 name: 'helm'
 
 env:
-  ROLE_NAME: "terraform-kms-role"
-  AWS_ROLE_ARN: "arn:aws:iam::1234567890:role/$ROLE_NAME"
+  FOO: "BAR"
+
 on:
   push:
     branches: [ "master" ]
@@ -34,5 +34,6 @@ jobs:
         ls -lha
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
+        cd grafana
         ls -lha
 
