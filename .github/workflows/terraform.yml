@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  helm:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
@@ -23,13 +23,10 @@ jobs:
         shell: bash
 
     steps:
-    - run: env && echo "arn:aws:iam::1234567890:role/$ROLE_NAME"
-    # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: open file
+    - name: helm install with 
       run: |
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
