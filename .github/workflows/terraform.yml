@@ -28,7 +28,7 @@ jobs:
 
     - name: https dashboards
       run: |
-        export TOKEN={{ secrets.GITHUB_TOKEN }}
+        export TOKEN=${{ secrets.GITHUB_TOKEN }}
         env
         echo $TOKEN
         helm repo add grafana https://grafana.github.io/helm-charts
