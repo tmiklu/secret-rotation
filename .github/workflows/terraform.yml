@@ -28,6 +28,8 @@ jobs:
 
     - name: https dashboards
       run: |
+        TOKEN = {{ secrets.GITHUB_TOKEN }}
+        echo $TOKEN
         helm repo add grafana https://grafana.github.io/helm-charts
         helm pull grafana/grafana --version 10.1.4 --untar
         cd grafana
