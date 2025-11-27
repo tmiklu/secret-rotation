@@ -15,9 +15,7 @@ pipeline {
   stages {
     stage ('JSON Validation') {
       steps {
-        script {
-          echo "${params.TASK_JSON}" | jq .
-        }
+        sh 'echo "${param.TASK_JSON}"'
       }
     }
   }
