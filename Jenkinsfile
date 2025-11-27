@@ -3,19 +3,19 @@ pipeline {
 
   parameters {
     string(
+      name: 'TASK_JSON',
       description: '''Sample TASK_JSON Body:
         [{"OP": "getAccount", "ACCOUNT_ID": "123"},
         {"OP": "getAccount", "ACCOUNT_ID": "456"},
         {"OP": "getAccount", "ACCOUNT_ID": "789"}]
-      ''',
-      name: 'TASK_JSON'
+      '''
     )
   }
 
   stages {
     stage ('JSON Validation') {
       steps {
-        sh 'echo "${param.TASK_JSON}"'
+        sh 'echo "Hello ${params.TASK_JSON}"'
       }
     }
   }
