@@ -3,7 +3,9 @@ pipeline {
 
   stages {
     stage ('JSON Validation') {
-      echo "validation"
+      steps {
+        echo "validation"
+      }
     }
   }
 }
