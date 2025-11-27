@@ -15,7 +15,7 @@ pipeline {
   stages {
     stage ('JSON Validation') {
       steps {
-        sh "echo ${params.TASK_JSON} | jq ."
+        sh 'python3 main.py ${params.TASK_JSON}'
       }
     }
   }
