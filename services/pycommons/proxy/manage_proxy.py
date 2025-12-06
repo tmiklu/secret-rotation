@@ -1,0 +1,2 @@
+def ManageProxy():
+  return "ManageProxy"
