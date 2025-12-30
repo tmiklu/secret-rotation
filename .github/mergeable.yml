@@ -4,5 +4,5 @@ mergeable:
     validate:
       - do: commit
         message:
-          regex: '^(feat|chore)\:.*'
+          regex: '^(fix|feat|chore)\:.*'
           message: 'Custom message'
