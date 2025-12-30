@@ -2,7 +2,7 @@ version: 2
 mergeable:
   - when: pull_request.*, pull_request_review.*
     validate:
-      - do: commit
-        message:
-          regex: '^(fix|feat|chore)\:.*'
-          message: 'Custom message'
+      - do: title
+        must_include:
+          regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
+          message: Semantic release conventions must be followed.
