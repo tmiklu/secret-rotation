@@ -1,2 +1,6 @@
 version: 2
 mergeable:
+- do: commit
+  message:
+    regex: '^(feat|chore)\:.*'
+    message: 'Custom message'
