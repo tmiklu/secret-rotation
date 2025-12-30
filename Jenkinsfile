@@ -4,7 +4,8 @@ pipeline {
   parameters {
     string(
       name: 'TASK_JSON',
-      description: '''Sample TASK_JSON Body:
+      description: '''
+      Sample TASK_JSON Body:\n
         [{"OP": "getAccount", "ACCOUNT_ID": "123"},
         {"OP": "getAccount", "ACCOUNT_ID": "456"},
         {"OP": "getAccount", "ACCOUNT_ID": "789"}]
