@@ -6,3 +6,7 @@ mergeable:
         must_include:
           regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
           message: Semantic release conventions must be followed.
+      - do: description
+        must_exclude:
+          regex: '[A-Z]{4,6}\-[0-9]{4,6}'
+          message: Jira ticket number.
