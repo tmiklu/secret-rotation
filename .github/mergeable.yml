@@ -2,17 +2,15 @@ version: 2
 mergeable:
   - when: pull_request.*, pull_request_review.*
     validate:
-      - do: and
-        validate:
-          - do: title
-            must_include:
-              regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
-              message: Semantic release conventions must be followed.
-          - do: description
-            must_include:
-              regex: '[A-Z]{4,6}\-[0-9]{4,6}'
-              message: Jira ticket number.
-          - do: commit
-            message:
-              regex: '^[A-Z]{4,6}\-[0-9]{4,6}'
-              message: 'Commit must start with JIRA ticket.'
+      - do: title
+        must_include:
+          regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
+          message: Semantic release conventions must be followed.
+      - do: description
+        must_include:
+          regex: '[A-Z]{4,6}\-[0-9]{4,6}'
+          message: Jira ticket number.
+      - do: commit
+        message:
+          regex: '^[A-Z]{4,6}\-[0-9]{4,6}'
+          message: 'Commit must start with JIRA ticket.'
