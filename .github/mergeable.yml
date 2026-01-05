@@ -2,7 +2,7 @@ version: 2
 mergeable:
   - when: pull_request.*, pull_request_review.*
     validate:
-      - do: or
+      - do: and
         validate:
           - do: title
             must_include:
