@@ -15,17 +15,10 @@ mergeable:
           regex: '(^Merge|^Revert|^[A-Z]{4,6}\-[0-9]{4,6}).*$'
           message: 'Commit must start with JIRA ticket or merge/revert message.'
       - do: label
-        and:
-          - must_include:
-              regex: 'big|medium|small'
-              message: 'Custom message...'
-          - must_include:
-              regex: 'type|chore|wont'
-              message: 'Custom message...'
         or:
           - must_include:
-              regex: 'Ready to merge'
-              message: 'Custom message...'
+              regex: 'squash'
+              message: 'Label for squash and merge'
           - must_include:
-              regex: 'DO NOT MERGE'
-              message: 'Custom message...'
+              regex: 'merge'
+              message: 'Label for merge'
