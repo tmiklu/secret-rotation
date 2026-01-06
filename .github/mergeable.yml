@@ -12,7 +12,7 @@ mergeable:
           message: Jira ticket number.
       - do: commit
         message:
-          regex: '(^Merge|^Revert|^[A-Z]{4,6}\-[0-9]{4,6}).*([\w\r\n]+)?.*'
+          regex: '(^Merge|^Revert|^[A-Z]{4,6}\-[0-9]{4,6}).*([\w\r\n]+)?.*$'
           message: 'Commit must start with JIRA ticket or merge/revert message.'
       - do: label
         or:
