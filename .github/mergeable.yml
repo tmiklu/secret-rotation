@@ -4,7 +4,7 @@ mergeable:
     validate:
       - do: title
         must_include:
-          regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
+          regex: '^(feat|docs|chore|fix|refactor|test|style|perf)\:\s[A-Z]{3,5}\-[0-9]{3,5}'
           message: Semantic release conventions must be followed.
       - do: description
         must_include:
@@ -12,5 +12,5 @@ mergeable:
           message: Jira ticket number.
       - do: commit
         message:
-          regex: '^[A-Z]{4,6}\-[0-9]{4,6}'
-          message: 'Commit must start with JIRA ticket.'
+          regex: '(^Merge|^Revert|^[A-Z]{4,6}\-[0-9]{4,6}).*$'
+          message: 'Commit must start with JIRA ticket or merge/revert message.'
