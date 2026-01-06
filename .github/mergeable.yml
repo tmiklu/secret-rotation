@@ -13,6 +13,7 @@ mergeable:
       - do: commit
         message:
           regex: '^Revert|^[A-Z]{4,6}\-[0-9]{4,6}).*([\w\r\n]+)?.*$'
+          skip_merge: true
           message: 'Commit must start with JIRA ticket or merge/revert message.'
       - do: label
         or:
